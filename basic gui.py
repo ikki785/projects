@@ -73,14 +73,14 @@ def chinfo():
 def login():
     global box
     box = Frame(w, bg="#ffffff", relief=RAISED, bd=3, width=400, height=200)
-    box.pack(padx=20, pady=10)
+    
     box.pack_propagate(False)
     a6 = Label(box,text="login",font=("Arial", 16))  
-    a7 = Label(box,text="enter your account name")
+    a7 = Label(box,text="enter your account name",width=20,height=1)
 
-    e5 = Entry(box,relief=RAISED)
-    a8 = Label(box,text="enter your password")
-    e6 = Entry(box,relief=RAISED)
+    e5 = Entry(box,relief=RAISED,bg = "black",width=20)
+    a8 = Label(box,text="enter your password",width=20,height=1)
+    e6 = Entry(box,relief=RAISED,width=20)
     b3 = Button(box,text="next",command=chinfo)
     a6.pack()
     a7.pack()
@@ -88,7 +88,7 @@ def login():
     a8.pack()
     e6.pack()
     b3.pack()
-    
+    box.pack(padx=20, pady=200)
 
 f1()
 
