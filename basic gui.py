@@ -37,16 +37,23 @@ def acc():
     e3.pack(pady=(0, 10))
     a5.pack(pady=(0, 5))
     e4.pack(pady=(0, 10))
-
+    account = ""
+    password = ""
     def info2():
+        nonlocal account,password
         account = e3.get()
         password = e4.get()
-        des()
-        login()
+
+        des()      # destroy UI AFTER saving
+        login(account,password)
+
+        
+
         
     
     bu2 = Button(box, text="Next", width=10, command=info2)
     bu2.pack(pady=10)
+
 
 def newd(name):
    
@@ -68,19 +75,34 @@ def info():
     mail = e2.get()
     des()  
     newd(name)
-def chinfo():
-    pass
-def login():
+
+def login(account,password):
     global box
     box = Frame(w, bg="#ffffff", relief=RAISED, bd=3, width=400, height=200)
     
     box.pack_propagate(False)
     a6 = Label(box,text="login",font=("Arial", 16))  
-    a7 = Label(box,text="enter your account name",width=20,height=1)
+    a7 = Label(box,text="enter your account name",
+               width=20,
+               height=1,
+               relief=RAISED)
 
     e5 = Entry(box,relief=RAISED,bg = "black",width=20)
-    a8 = Label(box,text="enter your password",width=20,height=1)
+    a8 = Label(box,text="enter your password",width=20,height=1,relief=RAISED)
     e6 = Entry(box,relief=RAISED,width=20)
+    def chinfo():
+        
+
+        if e5.get() == account:
+            if e6.get() == password:
+                print("login success")
+            else:
+                print("password is wrong")
+        else:
+            print("account name is wrong")
+
+
+        
     b3 = Button(box,text="next",command=chinfo)
     a6.pack()
     a7.pack()
