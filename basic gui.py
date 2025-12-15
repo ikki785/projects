@@ -2,11 +2,11 @@ from tkinter import *
 
 w = Tk()
 w.title("suman")
-w.geometry("500x400")
+w.geometry("1080x1080")
 
 def f1():
     box = Frame(w, bg="#ffffff", relief=RAISED, bd=3, width=400, height=200)
-    box.pack(padx=20, pady=20)
+    box.pack(padx=20, pady=200)
     box.pack_propagate(False)
     global e1
     global e2
@@ -63,7 +63,7 @@ def newd(name):
     
     global box
     box = Frame(w, bg="#ffffff", relief=RAISED, bd=3, width=400, height=200)
-    box.pack(padx=20, pady=10)
+    box.pack(padx=20, pady=200)
     box.pack_propagate(False)  
 
     
@@ -110,7 +110,7 @@ def login(account,password):
             login(account,password)
 
 
-        
+     
     b3 = Button(box,text="next",command=chinfo)
     a6.pack()
     a7.pack()
@@ -118,7 +118,7 @@ def login(account,password):
     a8.pack()
     e6.pack()
     b3.pack()
-    box.pack(padx=20, pady=200)
+    box.pack(padx=20, pady=200)   
 
 f1()
 
