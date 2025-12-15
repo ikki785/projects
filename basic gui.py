@@ -5,7 +5,7 @@ w.title("suman")
 w.geometry("1080x1080")
 
 def f1():
-    box = Frame(w, bg="#ffffff", relief=RAISED, bd=3, width=400, height=200)
+    box = Frame(w, bg="#ffffff", relief=RAISED, bd=3, width=400, height=250)
     box.pack(padx=20, pady=200)
     box.pack_propagate(False)
     global e1
@@ -15,12 +15,14 @@ def f1():
     a2 = Label(box, text="Enter your mail id", width=25, relief=RAISED, height=1)
     e2 = Entry(box, width=25, relief=RAISED)
     bu1 = Button(box, text="Next", width=10, command=info)
-
+    bu7 = Button(box,text="or login",width=10,command=login)
+    
     a1.pack(pady=(20, 5))
     e1.pack(pady=(0, 10))
     a2.pack(pady=(0, 5))
     e2.pack(pady=(0, 10))
     bu1.pack(pady=10)
+    bu7.pack()
 def des():
     
     for widget in w.winfo_children():
@@ -76,7 +78,8 @@ def info():
     des()  
     newd(name)
 
-def login(account,password):
+def login(account=0,password=0):
+    des()
     global box
     box = Frame(w, bg="#ffffff", relief=RAISED, bd=3, width=400, height=200)
     
@@ -102,15 +105,15 @@ def login(account,password):
                         des()
 
                         f.write(account)
-                    elif password in rep:
-                        pass
+                    elif e6.get()in rep:
+                        des()
                     else:
                         des()
                         a10 = Label(w,text="something went wrong try again",font=("Arial", 16))
                         a10.pack(pady=20)
                         login(account,password)
-            elif account in re:
-                pass
+            elif e5.get() in re:
+                des()
             else:
                 des()
                 a9 = Label(w,text="someting went wrong try again",font=("Arial", 16))
