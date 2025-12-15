@@ -77,7 +77,9 @@ def info():
     mail = e2.get()
     des()  
     newd(name)
-
+def ufo():
+    a10 = Label(w,text="welcome",bg = "lightblue",height=10,font=("Arial", 16))
+    a10.pack(fill="x")
 def login(account=0,password=0):
     des()
     global box
@@ -103,10 +105,11 @@ def login(account=0,password=0):
                     rep = f1.read()
                     if e6.get() == password:
                         des()
-
+                        ufo()
                         f.write(account)
                     elif e6.get()in rep:
                         des()
+                        ufo()
                     else:
                         des()
                         a10 = Label(w,text="something went wrong try again",font=("Arial", 16))
@@ -114,6 +117,7 @@ def login(account=0,password=0):
                         login(account,password)
             elif e5.get() in re:
                 des()
+                ufo()
             else:
                 des()
                 a9 = Label(w,text="someting went wrong try again",font=("Arial", 16))
