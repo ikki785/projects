@@ -92,26 +92,34 @@ def login(account,password):
     e6 = Entry(box,relief=RAISED,width=20)
     def chinfo():
         
+        with open("account.tex","r+")as f:
+            re = f.read()
+            
+            if e5.get() == account:
+                with open("passe.tex","r+")as f1:
+                    rep = f1.read()
+                    if e6.get() == password:
+                        des()
 
-        if e5.get() == account:
-            if e6.get() == password:
-                des()
-                a11 = Label(w,text="login succes full",font=("Arial", 16),relief=RAISED)
-                a11.pack(pady=200)
+                        f.write(account)
+                    elif password in rep:
+                        pass
+                    else:
+                        des()
+                        a10 = Label(w,text="something went wrong try again",font=("Arial", 16))
+                        a10.pack(pady=20)
+                        login(account,password)
+            elif account in re:
+                pass
             else:
                 des()
-                a10 = Label(w,text="something went wrong try again",font=("Arial", 16))
-                a10.pack(pady=20)
+                a9 = Label(w,text="someting went wrong try again",font=("Arial", 16))
+                a9.pack(pady=20)
                 login(account,password)
-        else:
-            des()
-            a9 = Label(w,text="someting went wrong try again",font=("Arial", 16))
-            a9.pack(pady=20)
-            login(account,password)
 
 
      
-    b3 = Button(box,text="next",command=chinfo)
+    b3 = Button(box,text="login",command=chinfo)
     a6.pack()
     a7.pack()
     e5.pack()
