@@ -29,6 +29,8 @@ void ca(){
             case '/':
                 cout<<a/c<<endl;
                 break;
+            case 'r':
+                cout<<"big ass";
             default:
                 cout<<"envialied option fool "<<endl;
                 break;
@@ -40,6 +42,7 @@ void ca(){
             if (op == 'n'){
                 cout<<"thanks:)"<<endl;
                 break;
+                
 
             }
             else {
