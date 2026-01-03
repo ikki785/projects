@@ -1,3 +1,7 @@
+/*
+real programer mindset
+if you can't fix a bug make it a feature 
+*/
 #include <iostream>
 #include <list>
 #include <string>
